@@ -6,14 +6,16 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-BLINK	KEYWORD1
+ECAMP	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-
-begin		KEYWORD2
-blink		KEYWORD2
+motorABegin   KEYWORD2
+motorBBegin   KEYWORD2
+motorAConfig  KEYWORD2
+motorBConfig  KEYWORD2
+setPWM        KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
