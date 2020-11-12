@@ -1,27 +1,27 @@
 /******************************************************************
- * BLINK plugin library for KB-IDE by chiang mai maker club
+ * ECamp plugin library for KB-IDE by chiang mai maker club
  *****************************************************************/
 
 #include "Ecamp.h"
 
-BLINK::BLINK() {}
-BLINK::~BLINK() {}
+ECamp::ECamp() {}
+ECamp::~ECamp() {}
 
-void BLINK::motorABegin() {
+void ECamp::motorABegin() {
   pinMode(18, OUTPUT);
   pinMode(19, OUTPUT);
   setPWM(18,0);
   setPWM(19,0);
 }
 
-void BLINK::motorBBegin() {
+void ECamp::motorBBegin() {
   pinMode(26, OUTPUT);
   pinMode(27, OUTPUT);
   setPWM(26,255);
   setPWM(27,255);
 }
 
-void BLINK::setPWM(uint8_t pin,uint8_t value){
+void ECamp::setPWM(uint8_t pin,uint8_t value){
   const uint16_t freq = 5000; 
   const uint8_t resolution = 8;
   uint8_t pwmChannel = 0;
@@ -37,7 +37,7 @@ void BLINK::setPWM(uint8_t pin,uint8_t value){
 
 }
 
-void BLINK::motorAConfig(String direction,uint8_t speed){
+void ECamp::motorAConfig(String direction,uint8_t speed){
   direction.toLowerCase();
   if(direction == "forward"){
     setPWM(18,0);
@@ -53,7 +53,7 @@ void BLINK::motorAConfig(String direction,uint8_t speed){
   }
 }
 
-void BLINK::motorBConfig(String direction,uint8_t speed){
+void ECamp::motorBConfig(String direction,uint8_t speed){
   direction.toLowerCase();
   if(direction == "forward"){
     setPWM(26,255);

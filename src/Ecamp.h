@@ -2,8 +2,8 @@
  * Motor plugin library for KB-IDE by technical E-camp
  ******************************************************************/
 
-#ifndef ecamp_h
-#define ecamp_h
+#ifndef Ecamp_h
+#define Ecamp_h
 
 #include <Arduino.h>
 
@@ -14,11 +14,11 @@
   #include <Arduino.h>
 #endif
 
-class BLINK
+class ECamp
 {
 public:
-  BLINK();
-  ~BLINK();
+  ECamp();
+  ~ECamp();
   void motorABegin();
   void motorAConfig(String direction,uint8_t speed);
   void motorBBegin();
@@ -29,4 +29,4 @@ protected:
 private:
 };
 
-#endif /*ecamp_h*/
+#endif /*ECamp_h*/
