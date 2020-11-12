@@ -2,8 +2,8 @@
  * Blink plugin library for KB-IDE by chiang mai maker club
  ******************************************************************/
 
-#ifndef blink_h
-#define blink_h
+#ifndef ecamp_h
+#define ecamp_h
 
 #include <Arduino.h>
 
@@ -19,14 +19,14 @@ class BLINK
 public:
   BLINK();
   ~BLINK();
+  void motorABegin();
+  void motorAConfig(String direction,uint8_t speed);
+  void motorBBegin();
+  void motorBConfig(String direction,uint8_t speed);
+  void setPWM(uint8_t pin,uint8_t value) ;
 
-  void begin(uint8_t _pin, const char* _mode);
-  void blink(uint8_t _pin, uint16_t _delay);
-  
 protected:
 private:
-	unsigned long prevMillis = 0;
-	unsigned long curMillis = 0;
 };
 
-#endif /*blink_h*/
+#endif /*ecamp_h*/

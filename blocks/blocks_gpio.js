@@ -1,34 +1,64 @@
-Blockly.Blocks['gpio_setup'] = {
+
+Blockly.Blocks['m1_begin'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Pin setup")
-        .appendField(new Blockly.FieldTextInput("13"), "PIN")
-        .appendField("to")
-        .appendField(new Blockly.FieldDropdown([
-            ["OUTPUT","OUTPUT"], 
-            ["INPUT","INPUT"], 
-            ["INPUT_PULLUP","INPUT_PULLUP"]
-            ]), "MODE");
+        .appendField("M1 begin");
+    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
-    this.setTooltip("");
-    this.setHelpUrl("");
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
   }
 };
 
-Blockly.Blocks['gpio_led_blink'] = {
+Blockly.Blocks['m2_begin'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Blink pin")
-        .appendField(new Blockly.FieldTextInput("13"), "PIN")
-        .appendField("every")
-        .appendField(new Blockly.FieldNumber(1000), "DELAY")
-        .appendField("ms");
+        .appendField("M2 begin");
+    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
-    this.setTooltip("");
-    this.setHelpUrl("");
-    }
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['m1_config'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("M1 start with :");
+    this.appendValueInput("direction")
+        .setCheck("String")
+        .appendField("direction");
+    this.appendValueInput("PWM Speed")
+        .setCheck("Number")
+        .appendField("PWM speed");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['m2_config'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("M2 start with :");
+    this.appendValueInput("direction")
+        .setCheck("String")
+        .appendField("direction");
+    this.appendValueInput("PWM Speed")
+        .setCheck("Number")
+        .appendField("PWM speed");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
 };

@@ -1,20 +1,32 @@
-Blockly.JavaScript['gpio_setup'] = function(block) {
-  var text_pin = block.getFieldValue('PIN');
-  var dropdown_mode = block.getFieldValue('MODE');
-
-  var code = 
-`
-#EXTINC#include <Blink.h>#END
-#VARIABLEBLINK gpio;#END
-gpio.begin(${text_pin}, "${dropdown_mode}");
-\n
-`;
+Blockly.JavaScript['m1_begin'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = `#EXTINC#include <Ecamp.h>#END
+  #VARIABLEBLINK ECamp;#END
+  ECamp.motorABegin();
+  \n`;
   return code;
 };
 
-Blockly.JavaScript['gpio_led_blink'] = function(block) {
-  var text_pin = block.getFieldValue('PIN');
-  var value_delay = block.getFieldValue('DELAY');
-  var code = `gpio.blink(${text_pin}, ${value_delay});\n`;
+Blockly.JavaScript['m1_config'] = function(block) {
+  var value_direction = Blockly.JavaScript.valueToCode(block, 'direction', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_pwm_speed = Blockly.JavaScript.valueToCode(block, 'PWM Speed', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `ECamp.motorAConfig(${value_direction}, ${value_pwm_speed});\n`;
   return code;
 };
+
+Blockly.JavaScript['m2_begin'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = `ECamp.motorBBegin();
+  \n`;
+  return code;
+};
+
+Blockly.JavaScript['m2_config'] = function(block) {
+  var value_direction = Blockly.JavaScript.valueToCode(block, 'direction', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_pwm_speed = Blockly.JavaScript.valueToCode(block, 'PWM Speed', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `ECamp.motorBConfig(${value_direction}, ${value_pwm_speed});\n`;
+  return code;
+};
+

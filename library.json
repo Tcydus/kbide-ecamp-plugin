@@ -1,9 +1,9 @@
 {
   "name" : "kbide-plugin-template",
-  "title": "Blink",
+  "title": "E-camp kidbright shield",
   "keywords": "ide, esp32, ultrasonic",
   "category":"",
-  "description": "Plugin Template for KB-IDE",
+  "description": "ปลั๊กอินใช้สำหรับ motor kidbright shield ของค่าย E-camp ครั้งที่ 13 ",
   "git": "https://github.com/cmmakerclub/kbide-plugin-template/",
   "author": "cmmakerclub",
   "email": "",
@@ -12,6 +12,6 @@
   "board" : "",
   "platform": ["arduino-esp32"],
   "license": "",
-  "image" : "/static/display.png",
+  "image" : "/static/display.jpg",
   "homepage": "http://www.kbide.org"
 }
