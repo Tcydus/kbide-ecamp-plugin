@@ -1,11 +1,11 @@
 {
-  "name" : "kbide-plugin-template",
+  "name" : "kbide-ecamp-plugin",
   "title": "E-camp kidbright shield",
   "keywords": "ide, esp32, ultrasonic",
   "category":"",
   "description": "ปลั๊กอินใช้สำหรับ motor kidbright shield ของค่าย E-camp ครั้งที่ 13 ",
   "git": "https://github.com/cmmakerclub/kbide-plugin-template/",
-  "author": "cmmakerclub",
+  "author": "technical E-camp",
   "email": "",
   "url": "http://www.kbide.org",
   "version": "1.0.0",

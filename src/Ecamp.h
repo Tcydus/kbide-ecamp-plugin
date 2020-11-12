@@ -1,5 +1,5 @@
 /******************************************************************
- * Blink plugin library for KB-IDE by chiang mai maker club
+ * Motor plugin library for KB-IDE by technical E-camp
  ******************************************************************/
 
 #ifndef ecamp_h
