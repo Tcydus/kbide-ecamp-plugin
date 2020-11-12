@@ -1,5 +1,5 @@
 #######################################
-# Syntax Coloring Map For Blink plugin
+# Syntax Coloring Map For ECamp plugin
 #######################################
 
 #######################################
