@@ -23,7 +23,9 @@ public:
   void motorAConfig(String direction,uint8_t speed);
   void motorBBegin();
   void motorBConfig(String direction,uint8_t speed);
-  void setPWM(uint8_t pin,uint8_t value) ;
+  void setPWMValue(uint8_t pin,uint8_t value) ;
+  void PWMInit(uint8_t pin);
+  uint8_t getPWMTimer(uint8_t pin);
 
 protected:
 private:
