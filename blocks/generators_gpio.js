@@ -1,3 +1,4 @@
+
 Blockly.JavaScript['motor_setup'] = function(block) {
   // var code = `#EXTINC
   // #include <Ecamp.h>
@@ -15,10 +16,11 @@ Blockly.JavaScript['m1_begin'] = function(block) {
 };
 
 Blockly.JavaScript['m1_config'] = function(block) {
-  var value_direction = Blockly.JavaScript.valueToCode(block, 'direction', Blockly.JavaScript.ORDER_ATOMIC);
+  // var value_direction = Blockly.JavaScript.valueToCode(block, 'direction', Blockly.JavaScript.ORDER_ATOMIC);
+  // var value_pwm_speed = block.getFieldValue('PWM');
+  var value_direction = block.getFieldValue('DIRECTION');
   var value_pwm_speed = Blockly.JavaScript.valueToCode(block, 'PWM Speed', Blockly.JavaScript.ORDER_ATOMIC);
-
-  var code = `ECamp.motorAConfig(${value_direction}, ${value_pwm_speed});\n`;
+  var code = `ECamp.motorAConfig(String("${value_direction}"), ${value_pwm_speed});\n`;
   return code;
 };
 
@@ -31,9 +33,13 @@ Blockly.JavaScript['m2_begin'] = function(block) {
 };
 
 Blockly.JavaScript['m2_config'] = function(block) {
-  var value_direction = Blockly.JavaScript.valueToCode(block, 'direction', Blockly.JavaScript.ORDER_ATOMIC);
+  // var value_direction = Blockly.JavaScript.valueToCode(block, 'direction', Blockly.JavaScript.ORDER_ATOMIC);
+  // var value_pwm_speed = block.getFieldValue('PWM');
+  var value_direction = block.getFieldValue('DIRECTION');
   var value_pwm_speed = Blockly.JavaScript.valueToCode(block, 'PWM Speed', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = `ECamp.motorBConfig(${value_direction}, ${value_pwm_speed});\n`;
+  var code = `ECamp.motorBConfig(String("${value_direction}"), ${value_pwm_speed});\n`;
   return code;
 };
+
+
 
