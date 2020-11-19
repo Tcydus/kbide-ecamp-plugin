@@ -1,11 +1,16 @@
-Blockly.JavaScript['m1_begin'] = function(block) {
+Blockly.JavaScript['motor_setup'] = function(block) {
+  // var code = `#EXTINC
+  // #include <Ecamp.h>
+  // \nECamp ECamp;
+  // #END;\n`;
+  var code =  `#EXTINC#include "Ecamp.h"#END
+  #VARIABLE ECamp ECamp;#END`;
+  return code;
+};
 
-  var code = `#EXTINC
-  #include <Ecamp.h>
-  \nECamp ECamp;
-  #END
-  ECamp.motorABegin();
-  \n`;
+Blockly.JavaScript['m1_begin'] = function(block) {
+  var dropdown_mode = block.getFieldValue('MODE');
+  var code = `ECamp.motorABegin(String("${dropdown_mode}"));\n`;
   return code;
 };
 
@@ -17,9 +22,11 @@ Blockly.JavaScript['m1_config'] = function(block) {
   return code;
 };
 
+
+
 Blockly.JavaScript['m2_begin'] = function(block) {
-  var code = `ECamp.motorBBegin();
-  \n`;
+  var dropdown_mode = block.getFieldValue('MODE');
+  var code = `ECamp.motorBBegin(String("${dropdown_mode}"));\n`;
   return code;
 };
 

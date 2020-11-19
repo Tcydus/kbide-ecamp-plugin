@@ -25,19 +25,24 @@ void ECamp::PWMInit(uint8_t pin){
   ledcAttachPin(pin, pwmChannel);
 }
 
-void ECamp::motorABegin() {
+void ECamp::motorABegin(String mode) {
   PWMInit(18);
   PWMInit(19);
   setPWMValue(18,0);
   setPWMValue(19,0);
-
+  mode == "invert" ? motor_a_invert = true :   
+    motor_a_invert = false;
+  
+  
 }
 
-void ECamp::motorBBegin() {
+void ECamp::motorBBegin(String mode) {
   PWMInit(26);
   PWMInit(27);
   setPWMValue(26,255);
   setPWMValue(27,255);
+  mode == "invert" ? motor_b_invert = true :   
+    motor_b_invert = false;
 }
 
 void ECamp::setPWMValue(uint8_t pin,uint8_t value){
@@ -47,8 +52,22 @@ void ECamp::setPWMValue(uint8_t pin,uint8_t value){
 
 }
 
-void ECamp::motorAConfig(String direction,uint8_t speed){
+String ECamp::directionConfig(String direction,bool invert){
   direction.toLowerCase();
+  if(direction == "forward"){
+    invert ? direction = "backward" : direction = "forward"; 
+  } 
+  else if(direction == "backward"){
+    invert ? direction = "forward" : direction = "backward"; 
+  } 
+  return direction;
+}
+
+
+void ECamp::motorAConfig(String direction,uint8_t speed){
+  // direction.toLowerCase();
+  direction = directionConfig(direction,motor_a_invert);
+  
   if(direction == "forward"){
     setPWMValue(18,0);
     setPWMValue(19,speed);
@@ -64,7 +83,9 @@ void ECamp::motorAConfig(String direction,uint8_t speed){
 }
 
 void ECamp::motorBConfig(String direction,uint8_t speed){
-  direction.toLowerCase();
+  // direction.toLowerCase();
+  direction = directionConfig(direction,motor_b_invert);
+
   if(direction == "forward"){
     setPWMValue(26,255);
     setPWMValue(27,255-speed);

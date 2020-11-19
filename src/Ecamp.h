@@ -16,19 +16,21 @@
 
 class ECamp
 {
-public:
-  ECamp();
-  ~ECamp();
-  void motorABegin();
-  void motorAConfig(String direction,uint8_t speed);
-  void motorBBegin();
-  void motorBConfig(String direction,uint8_t speed);
-  void setPWMValue(uint8_t pin,uint8_t value) ;
-  void PWMInit(uint8_t pin);
-  uint8_t getPWMTimer(uint8_t pin);
+  public:
+    ECamp();
+    ~ECamp();
+    void motorABegin(String mode);
+    void motorAConfig(String direction,uint8_t speed);
+    void motorBBegin(String mode);
+    void motorBConfig(String direction,uint8_t speed);
 
-protected:
-private:
+  protected:
+  private:
+    bool motor_a_invert,motor_b_invert;
+    void setPWMValue(uint8_t pin,uint8_t value) ;
+    void PWMInit(uint8_t pin);
+    uint8_t getPWMTimer(uint8_t pin);
+    String directionConfig(String direction,bool invert);
 };
 
 #endif /*ECamp_h*/
