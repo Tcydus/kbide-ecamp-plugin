@@ -6,9 +6,7 @@
 #include "Adafruit_GFX.h"
 #include "Adafruit_LEDBackpack.h"
 
-#include <Ecamp.h>
-
-  ECamp ECamp;
+#include "Ecamp.h"
 
 #include "KB_initBoard.h"
 #include "KB_music.h"
@@ -29,43 +27,35 @@ typedef int Number;
 typedef int Boolean;
 using namespace std;
 
+ECamp ECamp;
 
-
-
-
-
-void setup()
-{
+void setup() {
   board.begin();
   music.begin();
   lm73.begin();
   matrix.displayBegin();
   ldr.begin();
-  
-  ECamp.motorABegin();
 
-  ECamp.motorBBegin();
+  ECamp.motorABegin(String("normal"));
+  ECamp.motorBBegin(String("normal"));
 }
-void loop()
-{
-    ECamp.motorAConfig(String("Forward"), 255);
-  ECamp.motorBConfig(String("Forward"), 255);
+void loop() {
+  ECamp.motorAConfig(String("forward"), 255);
+  ECamp.motorBConfig(String("forward"), 255);
   delay(2000);
   ECamp.motorAConfig(String("forward"), 190);
   ECamp.motorBConfig(String("forward"), 190);
   delay(2000);
-  ECamp.motorAConfig(String("break"), 0);
-  ECamp.motorBConfig(String("break"), 0);
+  ECamp.motorAConfig(String("brake"), 0);
+  ECamp.motorBConfig(String("brake"), 0);
   delay(2000);
-  ECamp.motorAConfig(String("Backward"), 255);
-  ECamp.motorBConfig(String("Backward"), 255);
+  ECamp.motorAConfig(String("backward"), 255);
+  ECamp.motorBConfig(String("backward"), 255);
   delay(2000);
   ECamp.motorAConfig(String("backward"), 190);
   ECamp.motorBConfig(String("backward"), 190);
   delay(2000);
-  ECamp.motorAConfig(String("Break"), 250);
-  ECamp.motorBConfig(String("Break"), 250);
+  ECamp.motorAConfig(String("brake"), 250);
+  ECamp.motorBConfig(String("brake"), 250);
   delay(2000);
-
-  
 }
